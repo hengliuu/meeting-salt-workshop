@@ -120,3 +120,95 @@
     @apply bg-background text-foreground;
   }
 }
+
+@layer utilities {
+  /* Custom neon glow animations */
+  .neon-pulse {
+    animation: neon-pulse 2s ease-in-out infinite alternate;
+  }
+  
+  .neon-float {
+    animation: neon-float 6s ease-in-out infinite;
+  }
+  
+  .neon-rotate {
+    animation: neon-rotate 20s linear infinite;
+  }
+  
+  @keyframes neon-pulse {
+    from {
+      filter: drop-shadow(0 0 5px rgba(168, 85, 247, 0.4)) drop-shadow(0 0 10px rgba(168, 85, 247, 0.3)) drop-shadow(0 0 15px rgba(168, 85, 247, 0.2));
+    }
+    to {
+      filter: drop-shadow(0 0 10px rgba(168, 85, 247, 0.6)) drop-shadow(0 0 20px rgba(168, 85, 247, 0.4)) drop-shadow(0 0 30px rgba(168, 85, 247, 0.3));
+    }
+  }
+  
+  @keyframes neon-float {
+    0%, 100% {
+      transform: translateY(0px) rotate(0deg);
+    }
+    33% {
+      transform: translateY(-20px) rotate(1deg);
+    }
+    66% {
+      transform: translateY(10px) rotate(-1deg);
+    }
+  }
+  
+  @keyframes neon-rotate {
+    from {
+      transform: rotate(0deg);
+    }
+    to {
+      transform: rotate(360deg);
+    }
+  }
+  
+  /* Custom gradient backgrounds */
+  .bg-neon-gradient {
+    background: linear-gradient(135deg, #d946ef 0%, #8b5cf6 25%, #3b82f6 50%, #06b6d4 75%, #d946ef 100%);
+    background-size: 400% 400%;
+    animation: gradient-shift 8s ease infinite;
+  }
+  
+  @keyframes gradient-shift {
+    0% {
+      background-position: 0% 50%;
+    }
+    50% {
+      background-position: 100% 50%;
+    }
+    100% {
+      background-position: 0% 50%;
+    }
+  }
+  
+  /* Glass morphism effect */
+  .glass {
+    background: rgba(255, 255, 255, 0.1);
+    backdrop-filter: blur(10px);
+    border: 1px solid rgba(255, 255, 255, 0.2);
+  }
+  
+  /* Enhanced button hover effects */
+  .btn-neon {
+    position: relative;
+    overflow: hidden;
+  }
+  
+  .btn-neon::before {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: -100%;
+    width: 100%;
+    height: 100%;
+    background: linear-gradient(90deg, transparent, rgba(255, 255, 255, 0.2), transparent);
+    transition: left 0.5s;
+  }
+  
+  .btn-neon:hover::before {
+    left: 100%;
+  }
+}
