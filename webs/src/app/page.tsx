@@ -25,19 +25,17 @@ export default function Home() {
 
         <div className="flex gap-4 items-center flex-col sm:flex-row">
           <Link
-            href="/login"
+            href="/dashboard"
             className="rounded-full bg-gradient-to-r from-fuchsia-600 via-purple-600 to-blue-600 hover:from-fuchsia-700 hover:via-purple-700 hover:to-blue-700 text-white font-semibold text-sm sm:text-base h-12 px-8 flex items-center justify-center transition-all duration-300 transform hover:scale-105 hover:shadow-lg"
           >
-            Go to Login
+            Go to Dashboard
           </Link>
-          <a
+          <Link
+            href="/login"
             className="rounded-full border border-solid border-purple-200 hover:border-purple-300 transition-colors flex items-center justify-center hover:bg-purple-50 font-medium text-sm sm:text-base h-12 px-6 text-purple-700"
-            href="https://nextjs.org/docs"
-            target="_blank"
-            rel="noopener noreferrer"
           >
-            Learn More
-          </a>
+            Login Page
+          </Link>
         </div>
       </main>
       
